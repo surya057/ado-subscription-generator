@@ -6,7 +6,8 @@ In order to configure ADOSubscriptionGenerator you should compile and ensure tha
 - A Personal Access Token (PAT) token which is organisational-wide and is created per user
 - An endpoint to an Azure DevOps instance which is preceded by https://dev.azure.com/
 - A connection string to a service bus
-- The name of a service bus queue 
+- The name of a service bus queue
+- EventType is the name of the trigger you want to set up (You can find the list of names in ServiceHookEventDescription.cs)
 
 The json representation should looked like the following:
 
@@ -15,7 +16,8 @@ The json representation should looked like the following:
    "pat": "",
    "endpoint": "https://dev.azure.com/bp",
    "connectionString": "",
-   "queueName": ""
+   "queueName": "",
+   "eventType" : "git.push"
 }
 ```
 
