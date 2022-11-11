@@ -28,7 +28,7 @@ namespace bp.AdoSubscriptionGenerator
          ProjectHttpClient projectClient = _connection.GetClient<ProjectHttpClient>();
 
          // Call to get the list of projects
-         IEnumerable<TeamProjectReference> projects = await projectClient.GetProjects();
+         IEnumerable<TeamProjectReference> projects = await projectClient.GetProjects(top : 10000);
 
          return projects.Select(a => (a.Id.ToString(), a.Name));
       }
